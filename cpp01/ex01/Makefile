@@ -1,16 +1,19 @@
-NAME = phonebook
-
-SRCS = main.cpp Contact.cpp PhoneBook.cpp
-
-OBJS = $(SRCS:.cpp=.o)
-
+NAME = zombie
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-all: $(NAME)
+SRCS = main.cpp Zombie.cpp zombieHorde.cpp
+OBJS = $(SRCS:.cpp=.o)
+
+all: $(NAME) 
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+
+obj/%.o: %.cpp Zombie.hpp
+	@mkdir -p obj
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
 
 clean:
 	$(RM) $(OBJS)

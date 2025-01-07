@@ -11,4 +11,7 @@ Zombie::~Zombie()
     std::cout << "R.I.P " << this->name << " again:<" << std::endl;
 }
 
-Zombie* zombieHorde(int N, std::string name);
+void Zombie::announce() const
+{
+    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
