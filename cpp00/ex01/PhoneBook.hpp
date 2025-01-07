@@ -4,17 +4,20 @@
 #include <string>
 
 
+#define MAX_CONTACT_SIZE 8
+
 class PhoneBook
 {
 
     private:
-    	Contact contact[8];
+    	Contact contact[MAX_CONTACT_SIZE+1];
         int index;
         int size;
     public:
         PhoneBook();
         ~PhoneBook();
-        
+
+
         void addContact();
         void searchContact();
         
