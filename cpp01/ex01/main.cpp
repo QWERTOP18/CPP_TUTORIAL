@@ -2,21 +2,18 @@
 
 #include <iostream>
 
-int main(int argc, char **argv)
+int main()
 {
-    if (argc !=2)
-    {
-        std::cout << "Usage: ./zombie <name>" << std::endl;
-		return 1;
-    }
-    Zombie *zombie = newZombie(argv[1]);
-    if (zombie == NULL)
+    Zombie *horde = zombieHorde(6, "GAGIGUGEGO");
+    if (horde == NULL)
     {
         return 1;
     }
-    zombie->announce();
 
-    randomChump(argv[1]);
-    delete zombie;
+    for (int i = 0; i < 6; i++) {
+		std::cout << "[" << i + 1 << "] ";
+		horde[i].announce();
+	}
+    delete[] horde;
     return 0;
 }
