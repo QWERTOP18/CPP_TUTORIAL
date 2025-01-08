@@ -1,4 +1,7 @@
 #pragma once
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
+
 #include <iostream>
 #include <string>
 #include <iomanip> 
@@ -36,3 +39,5 @@ class Contact
         void displayOneLine() const;
 
 };
+
+#endif /* CONTACT_HPP */

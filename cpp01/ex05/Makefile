@@ -1,6 +1,6 @@
-NAME = 
+NAME = ex05.out
 
-SRCS = megaphone.cpp
+SRCS = main.cpp Harl.cpp 
 
 OBJS = $(SRCS:.cpp=.o)
 

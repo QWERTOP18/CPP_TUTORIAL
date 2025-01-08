@@ -1,9 +1,8 @@
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook()
+PhoneBook::PhoneBook(): index(0), size(0)
 {
     std::cout << "Welcome!" << std::endl;
-    this->index=0;this->size=0;
     this->contact[MAX_CONTACT_SIZE].setFirstName("firstname");
     this->contact[MAX_CONTACT_SIZE].setLastName("lastname");
     this->contact[MAX_CONTACT_SIZE].setNickName("nickname");

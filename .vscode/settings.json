@@ -45,6 +45,7 @@
         "algorithm": "cpp",
         "iomanip": "cpp",
         "phonebook.hpp": "c",
-        "contact.hpp": "c"
+        "contact.hpp": "c",
+        "fstream": "cpp"
     }
 }
