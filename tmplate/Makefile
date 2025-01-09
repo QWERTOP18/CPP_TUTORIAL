@@ -1,16 +1,18 @@
-NAME = ./ex05.out
-
-SRCS = main.cpp Harl.cpp 
-
-OBJS = $(SRCS:.cpp=.o)
-
+NAME = 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-all: $(NAME)
+SRCS = 
+OBJS = $(SRCS:.cpp=.o)
+
+all: $(NAME) 
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+
+obj/%.o: %.cpp 
+	@mkdir -p obj
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 run: $(NAME)
 	$(NAME)
@@ -23,4 +25,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all run clean fclean re
+.PHONY: all clean fclean re

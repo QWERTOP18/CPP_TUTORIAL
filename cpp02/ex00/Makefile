@@ -1,6 +1,6 @@
-NAME = ./ex05.out
+NAME = ./ex00.out
 
-SRCS = main.cpp Harl.cpp 
+SRCS = Fixed.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

@@ -1,2 +1,6 @@
 *.o
 *.out
+.vscode
+harlFilter
+infile*
+*.pdf

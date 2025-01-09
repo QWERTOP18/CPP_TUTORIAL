@@ -1,4 +1,4 @@
-NAME = harlFilter
+NAME = ./harlFilter
 SRCS = main.cpp Harl.cpp 
 
 OBJS = $(SRCS:.cpp=.o)
@@ -11,6 +11,9 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
+run: $(NAME)
+	$(NAME)
+
 clean:
 	$(RM) $(OBJS)
 
@@ -19,4 +22,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all run clean fclean re
