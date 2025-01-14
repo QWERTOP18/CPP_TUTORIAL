@@ -1,6 +1,6 @@
-#ifndef CAT_HPP
-#define CAT_HPP
-#include "Animal.hpp"
+#ifndef AANIMAL_HPP
+#define AANIMAL_HPP
+
 
 #include <iostream>
 #include <string>
@@ -9,34 +9,37 @@
 /*                                   CLASS :)                                 */
 /* -------------------------------------------------------------------------- */
 
-class Cat : public Animal
+class AAnimal
 {
-    private:
-
+    protected:
         /* ------ Members --------------------------------------------------- */
+
+        std::string type;
      
         /* ------------------------------------------------------------------ */
 
     public:
         /* ------ Constructors & Destructors -------------------------------- */
 
-        Cat();
-        Cat(std::string type);
-        Cat(const Cat &cat);
-        ~Cat();
+        AAnimal();
+        AAnimal(std::string type);
+        AAnimal(const AAnimal &AAnimal);
+        virtual ~AAnimal();
 
-        Cat &operator=(const Cat &cat);
+        AAnimal &operator=(const AAnimal &AAnimal);
 
         /* ------------------------------------------------------------------ */
 
         /* ----- Setters & Getters ------------------------------------------ */
+
+        std::string getType() const;
 
         /* ------------------------------------------------------------------ */
         
 
         /* ------ Members functions ------------------------------------------*/
 
-        void makeSound() const;
+        virtual void makeSound() const = 0;
 
         /* ------------------------------------------------------------------ */
 
@@ -47,4 +50,4 @@ class Cat : public Animal
 /*                              External functions                            */
 /* -------------------------------------------------------------------------- */
 
-#endif /* CAT_HPP */
+#endif /* AAnimal_HPP */

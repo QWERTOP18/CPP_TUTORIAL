@@ -1,3 +1,5 @@
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 
 #include <iostream>
@@ -7,25 +9,37 @@
 /*                                   CLASS :)                                 */
 /* -------------------------------------------------------------------------- */
 
-class 
+class WrongAnimal
 {
-    private:
-
+    protected:
         /* ------ Members --------------------------------------------------- */
+
+        std::string type;
      
         /* ------------------------------------------------------------------ */
 
     public:
         /* ------ Constructors & Destructors -------------------------------- */
 
+        WrongAnimal();
+        WrongAnimal(std::string type);
+        WrongAnimal(const WrongAnimal &Wronganimal);
+        virtual ~WrongAnimal();
+
+        WrongAnimal &operator=(const WrongAnimal &animal);
+
         /* ------------------------------------------------------------------ */
 
         /* ----- Setters & Getters ------------------------------------------ */
+
+        std::string getType() const;
 
         /* ------------------------------------------------------------------ */
         
 
         /* ------ Members functions ------------------------------------------*/
+
+        virtual void makeSound() const;
 
         /* ------------------------------------------------------------------ */
 
@@ -35,3 +49,5 @@ class
 /* -------------------------------------------------------------------------- */
 /*                              External functions                            */
 /* -------------------------------------------------------------------------- */
+
+#endif /* WRONGANIMAL_HPP */

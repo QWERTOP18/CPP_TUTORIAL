@@ -1,38 +1,43 @@
-#include "Cat.hpp"
+#include "Brain.hpp"
 
 /* -------------------------------------------------------------------------- */
 /*                          Constructors & Destructors                        */
 /* -------------------------------------------------------------------------- */
 
-Cat::Cat() : Animal("Cat")
-{ std::cout << "Cat default constructor called" << std::endl; }
+Brain::Brain()
+{ std::cout << "Brain default constructor called" << std::endl; }
 
-Cat::Cat(std::string type) : Animal(type)
-{ std::cout << "Cat type constructor called" << std::endl; }
-
-Cat::Cat(const Cat &cat) : Animal(cat)
-{ std::cout << "Cat copy constructor called" << std::endl; }
-
-Cat::~Cat()
-{ std::cout << "Cat destructor called" << std::endl; }
-
-Cat &Cat::operator=(const Cat &cat)
+Brain::Brain(const Brain &brain)
 {
-    std::cout << "Cat assignation operator called" << std::endl;
-    if (this == &cat)
+    std::cout << "Brain copy constructor called" << std::endl;
+    for (int i = 0; i < 100; i++)
+        this->ideas[i] = brain.ideas[i];
+}
+Brain::~Brain()
+{ std::cout << "Brain destructor called" << std::endl; }
+
+Brain &Brain::operator=(const Brain &brain)
+{
+    std::cout << "Brain assignation operator called" << std::endl;
+    if (this == &brain)
         return *this;
-    Animal::operator=(cat);
+    for (int i = 0; i < 100; i++)
+        this->ideas[i] = brain.ideas[i];
     return *this;
 }
+
 
 /* -------------------------------------------------------------------------- */
 /*                              Setters & Getters                             */
 /* -------------------------------------------------------------------------- */
 
 
+void Brain::setIdea(std::string idea, int index)
+{ this->ideas[index] = idea; }
+std::string Brain::getIdea(int index) const
+{ return this->ideas[index]; }
+
+
 /* -------------------------------------------------------------------------- */
 /*                             Members functions                              */
 /* -------------------------------------------------------------------------- */
-
-void Cat::makeSound() const
-{ std::cout << "Meow Meow ^^" << std::endl; }

@@ -1,6 +1,5 @@
-#ifndef CAT_HPP
-#define CAT_HPP
-#include "Animal.hpp"
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
 #include <iostream>
 #include <string>
@@ -9,34 +8,34 @@
 /*                                   CLASS :)                                 */
 /* -------------------------------------------------------------------------- */
 
-class Cat : public Animal
+class Brain
 {
     private:
 
         /* ------ Members --------------------------------------------------- */
-     
+        std::string ideas[100];
         /* ------------------------------------------------------------------ */
 
     public:
         /* ------ Constructors & Destructors -------------------------------- */
 
-        Cat();
-        Cat(std::string type);
-        Cat(const Cat &cat);
-        ~Cat();
+        Brain();
+        Brain(const Brain &brain);
+        ~Brain();
 
-        Cat &operator=(const Cat &cat);
+        Brain &operator=(const Brain &brain);
 
         /* ------------------------------------------------------------------ */
 
         /* ----- Setters & Getters ------------------------------------------ */
 
+        void setIdea(std::string idea, int index);
+        std::string getIdea(int index) const;
+
         /* ------------------------------------------------------------------ */
         
 
         /* ------ Members functions ------------------------------------------*/
-
-        void makeSound() const;
 
         /* ------------------------------------------------------------------ */
 
@@ -47,4 +46,4 @@ class Cat : public Animal
 /*                              External functions                            */
 /* -------------------------------------------------------------------------- */
 
-#endif /* CAT_HPP */
+#endif /* BRAIN_HPP */

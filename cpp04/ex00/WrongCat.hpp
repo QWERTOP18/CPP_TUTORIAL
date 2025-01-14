@@ -1,3 +1,5 @@
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 #include "WrongAnimal.hpp"
 
 #include <iostream>
@@ -7,7 +9,7 @@
 /*                                   CLASS :)                                 */
 /* -------------------------------------------------------------------------- */
 
-class 
+class WrongCat : public WrongAnimal
 {
     private:
 
@@ -18,6 +20,13 @@ class
     public:
         /* ------ Constructors & Destructors -------------------------------- */
 
+        WrongCat();
+        WrongCat(std::string type);
+        WrongCat(const WrongCat &Wrongcat);
+        ~WrongCat();
+
+        WrongCat &operator=(const WrongCat &cat);
+
         /* ------------------------------------------------------------------ */
 
         /* ----- Setters & Getters ------------------------------------------ */
@@ -27,6 +36,8 @@ class
 
         /* ------ Members functions ------------------------------------------*/
 
+        void makeSound() const;
+
         /* ------------------------------------------------------------------ */
 
 };
@@ -35,3 +46,5 @@ class
 /* -------------------------------------------------------------------------- */
 /*                              External functions                            */
 /* -------------------------------------------------------------------------- */
+
+#endif /* WRONGCAT_HPP */

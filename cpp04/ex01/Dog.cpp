@@ -1,29 +1,42 @@
-#include "Cat.hpp"
+#include "Dog.hpp"
 
 /* -------------------------------------------------------------------------- */
 /*                          Constructors & Destructors                        */
 /* -------------------------------------------------------------------------- */
 
-Cat::Cat() : Animal("Cat")
-{ std::cout << "Cat default constructor called" << std::endl; }
+Dog::Dog() : Animal("Dog")
+{ 
+    _brain = new Brain();    
+    std::cout << "Dog default constructor called" << std::endl; 
+}
 
-Cat::Cat(std::string type) : Animal(type)
-{ std::cout << "Cat type constructor called" << std::endl; }
+Dog::Dog(std::string type) : Animal(type)
+{ 
+    _brain = new Brain();    
+    std::cout << "Dog type constructor called" << std::endl; 
+}
 
-Cat::Cat(const Cat &cat) : Animal(cat)
-{ std::cout << "Cat copy constructor called" << std::endl; }
+Dog::Dog(const Dog &dog) : Animal(dog)
+{ 
+    _brain = new Brain();    
+    std::cout << "Dog copy constructor called" << std::endl; 
+}
 
-Cat::~Cat()
-{ std::cout << "Cat destructor called" << std::endl; }
+Dog::~Dog()
+{ 
+    std::cout << "Dog destructor called" << std::endl; 
+    delete _brain;    
+}
 
-Cat &Cat::operator=(const Cat &cat)
+Dog &Dog::operator=(const Dog &dog)
 {
-    std::cout << "Cat assignation operator called" << std::endl;
-    if (this == &cat)
+    std::cout << "Dog assignation operator called" << std::endl;
+    if (this == &dog)
         return *this;
-    Animal::operator=(cat);
+    Animal::operator=(dog);
     return *this;
 }
+
 
 /* -------------------------------------------------------------------------- */
 /*                              Setters & Getters                             */
@@ -34,5 +47,5 @@ Cat &Cat::operator=(const Cat &cat)
 /*                             Members functions                              */
 /* -------------------------------------------------------------------------- */
 
-void Cat::makeSound() const
-{ std::cout << "Meow Meow ^^" << std::endl; }
+void Dog::makeSound() const
+{ std::cout << "Woof Woof wang wang !!!" << std::endl; }

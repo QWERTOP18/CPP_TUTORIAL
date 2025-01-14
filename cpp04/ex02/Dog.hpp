@@ -1,6 +1,7 @@
-#ifndef CAT_HPP
-#define CAT_HPP
-#include "Animal.hpp"
+#ifndef DOG_HPP
+#define DOG_HPP
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
 #include <iostream>
 #include <string>
@@ -9,23 +10,23 @@
 /*                                   CLASS :)                                 */
 /* -------------------------------------------------------------------------- */
 
-class Cat : public Animal
+class Dog : public AAnimal
 {
     private:
 
         /* ------ Members --------------------------------------------------- */
-     
+        Brain* _brain;
         /* ------------------------------------------------------------------ */
 
     public:
         /* ------ Constructors & Destructors -------------------------------- */
 
-        Cat();
-        Cat(std::string type);
-        Cat(const Cat &cat);
-        ~Cat();
+        Dog();
+        Dog(std::string type);
+        Dog(const Dog &dog);
+        ~Dog();
 
-        Cat &operator=(const Cat &cat);
+        Dog &operator=(const Dog &dog);
 
         /* ------------------------------------------------------------------ */
 
@@ -47,4 +48,4 @@ class Cat : public Animal
 /*                              External functions                            */
 /* -------------------------------------------------------------------------- */
 
-#endif /* CAT_HPP */
+#endif /* DOG_HPP */
