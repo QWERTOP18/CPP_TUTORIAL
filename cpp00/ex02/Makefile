@@ -1,6 +1,6 @@
-NAME = 
+NAME = ./ex02.out
 
-SRCS = megaphone.cpp
+SRCS = tests.cpp Account.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -11,6 +11,9 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+
+run: $(NAME)
+	$(NAME)
 
 clean:
 	$(RM) $(OBJS)

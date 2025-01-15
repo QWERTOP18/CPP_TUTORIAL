@@ -1,4 +1,4 @@
-NAME = megaphone
+NAME = ./ex00.out
 
 SRCS = megaphone.cpp
 
@@ -11,6 +11,13 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+
+run: $(NAME)
+	@echo ""
+	$(NAME) "hello from CPP world^^ !!!"
+	@echo ""
+	$(NAME)
+
 
 clean:
 	$(RM) $(OBJS)

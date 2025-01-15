@@ -1,4 +1,4 @@
-NAME = phonebook
+NAME = ./ex01.out
 
 SRCS = main.cpp Contact.cpp PhoneBook.cpp
 
@@ -11,6 +11,9 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+
+run: $(NAME)
+	$(NAME)
 
 clean:
 	$(RM) $(OBJS)

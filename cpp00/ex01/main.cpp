@@ -6,7 +6,7 @@ int main()
     PhoneBook phoneBook;
     while(true)
     {
-        std::cout << "ENTER ADD , SEARCH or EXIT" << std::endl;
+        std::cout <<"ENTER:  " BOLD "ADD" RESET " , " BOLD "SEARCH" RESET  " or " BOLD "EXIT" RESET << std::endl;
         std::getline(std::cin, input);
         if(input == "EXIT" || std::cin.eof())
             break;

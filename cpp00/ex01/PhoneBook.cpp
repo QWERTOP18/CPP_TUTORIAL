@@ -2,7 +2,7 @@
 
 PhoneBook::PhoneBook(): index(0), size(0)
 {
-    std::cout << "Welcome!" << std::endl;
+    std::cout << REVERSED  "Welcome!"  RESET  << std::endl;
     this->contact[MAX_CONTACT_SIZE].setFirstName("firstname");
     this->contact[MAX_CONTACT_SIZE].setLastName("lastname");
     this->contact[MAX_CONTACT_SIZE].setNickName("nickname");
@@ -11,7 +11,7 @@ PhoneBook::PhoneBook(): index(0), size(0)
 }
 PhoneBook::~PhoneBook()
 {
-    std::cout << "Goodbye!" << std::endl;
+    std::cout << REVERSED "Goodbye!"  RESET << std::endl;
 }
 
 
