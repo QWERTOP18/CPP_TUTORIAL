@@ -1,8 +1,8 @@
-NAME = ./ex01.out
+NAME = ./ex00.out
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Zombie.cpp zombieHorde.cpp
+SRCS = 
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME) 
@@ -10,13 +10,12 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
-obj/%.o: %.cpp Zombie.hpp
+obj/%.o: %.cpp
 	@mkdir -p obj
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 run: $(NAME)
 	$(NAME)
-
 
 clean:
 	$(RM) $(OBJS)

@@ -1,7 +1,15 @@
 #include "Contact.hpp"
 
+/* -------------------------------------------------------------------------- */
+/*                          Constructors & Destructors                        */
+/* -------------------------------------------------------------------------- */
+
 Contact::Contact(){}
 Contact::~Contact(){}
+
+/* -------------------------------------------------------------------------- */
+/*                              Setters & Getters                             */
+/* -------------------------------------------------------------------------- */
 
 void Contact::setFirstName(const std::string& firstName){this->firstName = firstName;}
 std::string Contact::getFirstName() const{return this->firstName;}
@@ -17,6 +25,10 @@ std::string Contact::getPhoneNumber() const{return this->phoneNumber;}
 
 void Contact::setDarkestSecret(const std::string& darkestSecret){this->darkestSecret = darkestSecret;}
 std::string Contact::getDarkestSecret() const{return this->darkestSecret;}
+
+/* -------------------------------------------------------------------------- */
+/*                             Members functions                              */
+/* -------------------------------------------------------------------------- */
 
 void Contact::displayContact() const
 {
