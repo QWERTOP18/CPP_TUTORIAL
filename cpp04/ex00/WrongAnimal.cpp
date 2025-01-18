@@ -1,8 +1,8 @@
 #include "WrongAnimal.hpp"
 
 /* -------------------------------------------------------------------------- */
-/*                          Constructors & Destructors                        */
-/* -------------------------------------------------------------------------- */
+/*                                 Constructors                               */
+/* -------------------------------------------------------------------- :( -- */
 
 WrongAnimal::WrongAnimal() : type("WrongAnimal")
 { std::cout << "WrongAnimal default constructor called" << std::endl; }

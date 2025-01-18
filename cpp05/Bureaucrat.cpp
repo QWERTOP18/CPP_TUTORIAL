@@ -1,36 +1,9 @@
-#include "Point.hpp"
+#include "Bureaucrat.hpp"
 
 /* -------------------------------------------------------------------------- */
 /*                                 Constructors                               */
 /* -------------------------------------------------------------------- :( -- */
 
-Point::Point() 
-    : _x(0), _y(0)
-{
-
-}
-
-Point::Point(const Fixed &x, const Fixed &y)
-    : _x(x), _y(y)
-{
-
-}
-
-
-Point::~Point()
-{
-
-}
-
-Point::Point(const Point &src)
-{
-
-}
-
-Point& Point::operator=(const Point &src)
-{
-
-}
 
 /* -------------------------------------------------------------------------- */
 /*                              Setters & Getters                             */

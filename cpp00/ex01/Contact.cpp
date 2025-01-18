@@ -1,8 +1,8 @@
 #include "Contact.hpp"
 
 /* -------------------------------------------------------------------------- */
-/*                          Constructors & Destructors                        */
-/* -------------------------------------------------------------------------- */
+/*                                 Constructors                               */
+/* -------------------------------------------------------------------- :( -- */
 
 Contact::Contact(){}
 Contact::~Contact(){}
@@ -11,20 +11,30 @@ Contact::~Contact(){}
 /*                              Setters & Getters                             */
 /* -------------------------------------------------------------------------- */
 
-void Contact::setFirstName(const std::string& firstName){this->firstName = firstName;}
-std::string Contact::getFirstName() const{return this->firstName;}
+void Contact::setFirstName(const std::string& firstName)
+{ this->firstName = firstName; }
+std::string Contact::getFirstName() const
+{ return this->firstName; }
 
-void Contact::setLastName(const std::string& lastName){this->lastName = lastName;}
-std::string Contact::getLastName() const{return this->lastName;}
+void Contact::setLastName(const std::string& lastName)
+{ this->lastName = lastName; }
+std::string Contact::getLastName() const
+{ return this->lastName; }
 
-void Contact::setNickName(const std::string& nickName){this->nickName = nickName;}
-std::string Contact::getNickName() const{return this->nickName;}
+void Contact::setNickName(const std::string& nickName)
+{ this->nickName = nickName; }
+std::string Contact::getNickName() const
+{ return this->nickName; }
 
-void Contact::setPhoneNumber(const std::string& phoneNumber){this->phoneNumber = phoneNumber;}
-std::string Contact::getPhoneNumber() const{return this->phoneNumber;}
+void Contact::setPhoneNumber(const std::string& phoneNumber)
+{ this->phoneNumber = phoneNumber; }
+std::string Contact::getPhoneNumber() const
+{ return this->phoneNumber; }
 
-void Contact::setDarkestSecret(const std::string& darkestSecret){this->darkestSecret = darkestSecret;}
-std::string Contact::getDarkestSecret() const{return this->darkestSecret;}
+void Contact::setDarkestSecret(const std::string& darkestSecret)
+{ this->darkestSecret = darkestSecret; }
+std::string Contact::getDarkestSecret() const
+{ return this->darkestSecret; }
 
 /* -------------------------------------------------------------------------- */
 /*                             Members functions                              */

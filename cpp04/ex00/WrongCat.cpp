@@ -1,8 +1,8 @@
 #include "WrongCat.hpp"
 
 /* -------------------------------------------------------------------------- */
-/*                          Constructors & Destructors                        */
-/* -------------------------------------------------------------------------- */
+/*                                 Constructors                               */
+/* -------------------------------------------------------------------- :( -- */
 
 WrongCat::WrongCat() : WrongAnimal("WrongCat")
 { std::cout << "WrongCat default constructor called" << std::endl; }

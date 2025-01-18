@@ -1,8 +1,8 @@
 #include "AAnimal.hpp"
 
 /* -------------------------------------------------------------------------- */
-/*                          Constructors & Destructors                        */
-/* -------------------------------------------------------------------------- */
+/*                                 Constructors                               */
+/* -------------------------------------------------------------------- :( -- */
 
 AAnimal::AAnimal() : type("AAnimal")
 { std::cout << "AAnimal default constructor called" << std::endl; }
