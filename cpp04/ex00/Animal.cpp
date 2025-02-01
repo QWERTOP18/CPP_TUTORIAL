@@ -4,13 +4,13 @@
 /*                                 Constructors                               */
 /* -------------------------------------------------------------------- :( -- */
 
-Animal::Animal() : type("Animal")
+Animal::Animal() : _type("Animal")
 { std::cout << "Animal default constructor called" << std::endl; }
 
-Animal::Animal(std::string type) : type(type)
+Animal::Animal(std::string type) : _type(type)
 { std::cout << "Animal type constructor called" << std::endl; }
 
-Animal::Animal(const Animal &animal) : type(animal.type)
+Animal::Animal(const Animal &animal) : _type(animal._type)
 { std::cout << "Animal copy constructor called" << std::endl; }
 
 Animal::~Animal()
@@ -21,7 +21,7 @@ Animal &Animal::operator=(const Animal &animal)
     std::cout << "Animal assignation operator called" << std::endl;
     if (this == &animal)
         return *this;
-    this->type = animal.type;
+    this->_type = animal._type;
     return *this;
 }
 
@@ -30,7 +30,7 @@ Animal &Animal::operator=(const Animal &animal)
 /* -------------------------------------------------------------------------- */
 
 std::string Animal::getType() const
-{ return this->type; }
+{ return this->_type; }
 
 /* -------------------------------------------------------------------------- */
 /*                             Members functions                              */

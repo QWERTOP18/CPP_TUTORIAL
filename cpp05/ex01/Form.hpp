@@ -1,6 +1,7 @@
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
 
+#include "Bureaucrat.hpp"
 #include <iostream>
 #include <string>
 
@@ -8,46 +9,51 @@
 /*                                   CLASS :)                                 */
 /* -------------------------------------------------------------------------- */
 
-class Bureaucrat
+class Form
 {
     private:
 
     /* ------ Members --------------------------------------------------- */
         const std::string _name;
-        int _grade;
+        bool _isSigned;
+        const int _gradeToSign;
+        const int _gradeToExecute;
     /* ------------------------------------------------------------------ */
 
     public:
     /* ------ Constructors & Destructors -------------------------------- */
-        Bureaucrat();
-        Bureaucrat(const std::string &name, int grade);
-        ~Bureaucrat();
-        Bureaucrat(const Bureaucrat &src);
-        Bureaucrat &operator=(const Bureaucrat &src);
+        Form();
+        Form(const std::string &name, int gradeToSign, int gradeToExecute);
+        Form(const Form &src);
+        ~Form();
+        Form &operator=(const Form &src);
     /* ---------------------------------------------------------------^^! */
 
     /* ----- Setters & Getters ------------------------------------------ */
         const std::string &getName() const;
-        int getGrade() const;
+        bool getIsSigned() const;
+        int getGradeToSign() const;
+        int getGradeToExecute() const;
+        
     /* ----------------------------------------------------------------:D */
         
 
     /* ------ Members functions ------------------------------------------*/
-        void incrementGrade();
-        void decrementGrade();
+        void beSigned(const Bureaucrat &bureaucrat);
     /* ------------------------------------------------------------lucky? */
 
-        class GradeTooHighException : public std::exception
-        {
+    class GradeTooHighException : public std::exception
+    {
         public:
             const char *what() const throw();
-        };
+    };
 
-        class GradeTooLowException : public std::exception
-        {
+    class GradeTooLowException : public std::exception
+    {
         public:
             const char *what() const throw();
-        };
+    };
+
 
 };
 
@@ -56,7 +62,6 @@ class Bureaucrat
 /*                              External functions                            */
 /* -------------------------------------------------------------------------- */
 
-std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
+std::ostream &operator<<(std::ostream &os, const Form &form);
 
-
-#endif /* BUREAUCRAT_HPP */
+#endif /* FORM_HPP */

@@ -33,6 +33,8 @@ Cat &Cat::operator=(const Cat &cat)
     std::cout << "Cat assignation operator called" << std::endl;
     if (this == &cat)
         return *this;
+    // deepcopy
+    delete _brain;
     Animal::operator=(cat);
     return *this;
 }

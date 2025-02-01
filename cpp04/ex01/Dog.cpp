@@ -33,6 +33,8 @@ Dog &Dog::operator=(const Dog &dog)
     std::cout << "Dog assignation operator called" << std::endl;
     if (this == &dog)
         return *this;
+    // deepcopy
+    delete _brain;
     Animal::operator=(dog);
     return *this;
 }

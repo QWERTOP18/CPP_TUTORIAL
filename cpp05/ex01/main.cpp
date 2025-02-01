@@ -1,3 +1,4 @@
+
 #include "Bureaucrat.hpp"
 
 
@@ -26,10 +27,10 @@ void test(const std::string& name, int grade)
 
 int main()
 {
-    test("Kotaro", 40);
+    // test("Kotaro", 40);
 
-    test("Kirby",151);
+    // test("Kirby",151);
 
-    test("waddle dee", 0);
+    // test("waddle dee", 0);
     return 0;
 }

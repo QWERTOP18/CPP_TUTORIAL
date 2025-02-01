@@ -2,7 +2,7 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-#include <cmath>
+#include <string>
 
 /* -------------------------------------------------------------------------- */
 /*                                   CLASS :)                                 */
@@ -12,29 +12,30 @@ class Bureaucrat
 {
     private:
 
-        /* ------ Members --------------------------------------------------- */
+    /* ------ Members --------------------------------------------------- */
         const std::string _name;
         int _grade;
-        /* ------------------------------------------------------------------ */
+    /* ------------------------------------------------------------------ */
 
     public:
-        /* ------ Constructors & Destructors -------------------------------- */
+    /* ------ Constructors & Destructors -------------------------------- */
         Bureaucrat();
-        Bureaucrat(std::string, int grade);
+        Bureaucrat(const std::string &name, int grade);
         ~Bureaucrat();
         Bureaucrat(const Bureaucrat &src);
         Bureaucrat &operator=(const Bureaucrat &src);
-        /* ---------------------------------------------------------------^^! */
+    /* ---------------------------------------------------------------^^! */
 
-        /* ----- Setters & Getters ------------------------------------------ */
+    /* ----- Setters & Getters ------------------------------------------ */
         const std::string &getName() const;
         int getGrade() const;
-        /* ----------------------------------------------------------------:D */
+    /* ----------------------------------------------------------------:D */
         
 
-        /* ------ Members functions ------------------------------------------*/
-
-        /* ------------------------------------------------------------lucky? */
+    /* ------ Members functions ------------------------------------------*/
+        void incrementGrade();
+        void decrementGrade();
+    /* ------------------------------------------------------------lucky? */
 
         class GradeTooHighException : public std::exception
         {
@@ -55,6 +56,7 @@ class Bureaucrat
 /*                              External functions                            */
 /* -------------------------------------------------------------------------- */
 
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
 
 
 #endif /* BUREAUCRAT_HPP */
