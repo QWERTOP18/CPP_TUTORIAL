@@ -1,4 +1,4 @@
-NAME = ./ex00.out
+NAME = ./megaphone
 
 SRCS = megaphone.cpp
 

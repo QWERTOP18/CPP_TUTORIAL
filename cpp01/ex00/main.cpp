@@ -10,10 +10,7 @@ int main(int argc, char **argv)
 		return 1;
     }
     Zombie *zombie = newZombie(argv[1]);
-    // if (zombie == NULL)
-    // {
-    //     return 1;
-    // }
+
     zombie->announce();
 
     randomChump(argv[1]);

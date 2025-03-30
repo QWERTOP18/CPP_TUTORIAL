@@ -31,6 +31,19 @@ PhoneBook::~PhoneBook()
 /* -------------------------------------------------------------------------- */
 
 
+bool isValidPhoneNumber(const std::string& phoneNumber) {
+    if (phoneNumber.length() != 10 && phoneNumber.length() != 11) {
+        return false;
+    }
+
+    for (size_t i = 0; i < phoneNumber.length(); ++i) {
+        if (phoneNumber[i] < '0' || phoneNumber[i] > '9') {
+            return false;
+        }
+    }
+
+    return true;
+}
 
 void PhoneBook::addContact()
 {
@@ -45,9 +58,19 @@ void PhoneBook::addContact()
     std::cout << "Enter nickname: ";
     std::getline(std::cin, input);
     this->contact[this->index].setNickName(input);
-    std::cout << "Enter phone number: ";
-    std::getline(std::cin, input);
-    this->contact[this->index].setPhoneNumber(input);
+    // std::cout << "Enter phone number: ";
+    // std::getline(std::cin, input);
+    // this->contact[this->index].setPhoneNumber(input);
+    do {
+        std::cout << "Enter phone number: ";
+        std::getline(std::cin, input);
+
+        if (!isValidPhoneNumber(input)) {
+            std::cout << "Invalid phone number. Please enter a 10 or 11-digit number.\n";
+        }
+    } while (!isValidPhoneNumber(input));
+
+
     std::cout << "Enter darkest secret: ";
     std::getline(std::cin, input);
     this->contact[this->index].setDarkestSecret(input);
@@ -74,8 +97,10 @@ void PhoneBook::searchContact()
     std::cout << std::string(48, '-') << std::endl;
     std::cout << "Enter the number :";
     std::getline(std::cin, input);
-    try {index = std::stoi(input);}
-    catch (const std::exception& e) {index = -1;}
+    std::istringstream iss(input);
+    if (!(iss >> index)) {
+        index = -1;
+    }
     if(index > 0 && index <= this->size)
         this->contact[index-1].displayContact();
     else
@@ -86,3 +111,28 @@ void PhoneBook::searchContact()
     }
 }
 
+
+
+void PhoneBookStart()
+{
+
+    std::string input;
+    PhoneBook phoneBook;
+    while(true)
+    {
+        std::cout <<"ENTER:  " BOLD "ADD" RESET " , " BOLD "SEARCH" RESET  " or " BOLD "EXIT" RESET << std::endl;
+        std::getline(std::cin, input);
+        if(input == "EXIT" || std::cin.eof())
+        break;
+        else if(input == "ADD")
+        phoneBook.addContact();
+        else if(input == "SEARCH")
+        phoneBook.searchContact();
+        else
+        {
+            std::cout << "Invalid input" << std::endl;
+        }
+        
+    }
+    
+}

@@ -5,6 +5,7 @@
 #include "Contact.hpp"
 #include <iostream>
 #include <string>
+#include <sstream>
 
 
 #define MAX_CONTACT_SIZE 8
@@ -25,5 +26,7 @@ class PhoneBook
         void searchContact();
         
 };
+
+void PhoneBookStart();
 
 #endif /* PHONEBOOK_H */

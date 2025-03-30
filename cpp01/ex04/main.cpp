@@ -4,14 +4,14 @@
 
 bool copyFileWithReplacement(const std::string& file, const std::string& s1, const std::string& s2)
 {
-    std::ifstream input(file);
+    std::ifstream input(file.c_str());
     if (!input) {
         std::cerr << "Error opening input file!" << std::endl;
         return false;
     }
 
-    std::string out_file = file + ".replace";
-    std::ofstream output(out_file);
+    std::string out_file = std::string(file) + ".replace";
+    std::ofstream output(out_file.c_str());
     if (!output) {
         std::cerr << "Error opening output file!" << std::endl;
         return false;
